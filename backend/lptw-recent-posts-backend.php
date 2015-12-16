@@ -178,14 +178,6 @@ function formatSelectTags($tags){
 }
 
 function lptw_recent_posts_manage_shortcodes() {
-	if(isset($_POST['action']) && $_POST['action'] == "savedefault"){
-		// Save options
-		echo "<pre>";
-		var_dump($_POST);
-		die();
-	}
-	$default_posts_per_page = intval(get_option('posts_per_page', '10'));
-
 	$defaults = array(
 		"sb_layout" => "basic",
 		"no_thumbnails" => NULL,
@@ -240,6 +232,20 @@ function lptw_recent_posts_manage_shortcodes() {
 		"sb_date_format" => "d.m.Y",
 		"sb_time_format" => "H:i"
 	);
+	
+	if(isset($_POST['action']) && $_POST['action'] == "savedefault"){
+		// Save options
+		$data = $_POST;
+		unset($data["action"]);
+		foreach($defaults as $key => $value){
+			if(!isset($data[$key]))
+				$data[$key] = NULL;
+		}
+		update_option("lptw_recent_posts", $data);
+	}
+	$default_posts_per_page = intval(get_option('posts_per_page', '10'));
+
+	$defaults = array_merge($defaults, get_option("lptw_recent_posts", $defaults));
 	$formFields = array(
 		"sb_layout" => lptw_check(
 			"sb_layout",
@@ -509,8 +515,7 @@ function lptw_recent_posts_manage_shortcodes() {
 				"attributes" => array(
 					"class" => "small-text",
 					"min" => "1",
-					"step" => "1",
-					"disabled" => "disabled"
+					"step" => "1"
 				),
 				"value" => $defaults["posts_per_page"]
 			)
@@ -812,7 +817,7 @@ function lptw_recent_posts_manage_shortcodes() {
 			"sb_time_format",
 			array(
 				"radio" => true,
-				"selected" => $defaults["sb_date_format"],
+				"selected" => $defaults["sb_time_format"],
 				"options" => array(
 					"H:i" => array(
 						"attributes" => array(
@@ -839,7 +844,7 @@ function lptw_recent_posts_manage_shortcodes() {
 		),
 	);
 
-/*	echo "<pre>";
+	/*	echo "<pre>";
 	echo htmlspecialchars(var_export($formFields, true));
 	echo "</pre>";*/
 ?>
@@ -884,7 +889,7 @@ function lptw_recent_posts_manage_shortcodes() {
 								<?php _e("Number of columns.", "lptw_recent_posts"); ?></label>
 						</div>
 						<div class="lptw-sb-row">
-							<?php _e("Save as default", "lptw_recent_posts"); ?>Space beetween columns:&nbsp;&nbsp;&nbsp;
+							<?php _e("Space beetween columns", "lptw_recent_posts"); ?>:&nbsp;&nbsp;&nbsp;
 							<label for="sb_space_hor"><?php echo $formFields["sb_space_hor"]; ?>
 								<?php _e("Horizontal.", "lptw_recent_posts"); ?></label>
 							<label for="sb_space_ver"><?php echo $formFields["sb_space_ver"]; ?>
@@ -904,7 +909,7 @@ function lptw_recent_posts_manage_shortcodes() {
 						</div>
 						<div class="lptw-sb-row">
 							<label for="sb_featured_height"><?php echo $formFields["sb_featured_height"]; ?>
-								<?php _e("Save as default", "lptw_recent_posts"); ?>The fixed height of the <b><u>Featured</u></b> Post in pixels, only for Responsive Grid. If value = 0, height of all <b><u>Featured</u></b> Posts set to 400 px.</label>
+								<?php _e("The fixed height of the <b><u>Featured</u></b> Post in pixels, only for Responsive Grid. If value = 0, height of all <b><u>Featured</u></b> Posts set to 400 px.", "lptw_recent_posts"); ?></label>
 						</div>
 						<div class="lptw-sb-row">
 							<label for="sb_min_height"><?php echo $formFields["sb_min_height"]; ?>
@@ -1004,6 +1009,7 @@ function lptw_recent_posts_manage_shortcodes() {
 					<th scope="row"><label for="color_scheme"><?php _e("Color scheme", "lptw_recent_posts"); ?>:&nbsp;</label></th>
 					<td>
 						<?php echo $formFields["color_scheme"]; ?>
+						<p class="description"><?php _e("Only for Basic layout.", "lptw_recent_posts"); ?></p>
 					</td>
 				</tr>
 				<tr>

@@ -8,8 +8,8 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
 
     function __construct() {
 
-		$widget_ops = array('classname' => 'lptw_recent_posts_fluid_images_widget', 'description' => __( "Your site&#8217;s most recent Posts. Displays big fluid images, post date ant title.", 'lptw_recent_posts_domain') );
-		parent::__construct('lptw-fluid-images-recent-posts', __('Recent Posts Widget (Fluid Images)', 'lptw_recent_posts_domain'), $widget_ops);
+		$widget_ops = array('classname' => 'lptw_recent_posts_fluid_images_widget', 'description' => __( "Your site&#8217;s most recent Posts. Displays big fluid images, post date ant title.", 'lptw_recent_posts') );
+		parent::__construct('lptw-fluid-images-recent-posts', __('Recent Posts Widget (Fluid Images)', 'lptw_recent_posts'), $widget_ops);
 		$this->alt_option_name = 'lptw_widget_fluid_images_recent_entries';
 
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
@@ -45,7 +45,7 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
 		$exclude_current_post = isset( $instance['exclude_current_post'] ) ? $instance['exclude_current_post'] : true;
 		$no_thumbnails = isset( $instance['no_thumbnails'] ) ? $instance['no_thumbnails'] : false;
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts', 'lptw_recent_posts_domain' );
+		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : __( 'Recent Posts', 'lptw_recent_posts' );
 
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
@@ -211,7 +211,7 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
     /* --------------------------------- Widget Backend --------------------------------- */
     public function form( $instance ) {
         if ( isset( $instance[ 'title' ] ) ) { $title = esc_attr( $instance[ 'title' ]) ; }
-        else { $title = __( 'Recent posts', 'lptw_recent_posts_domain' ); }
+        else { $title = __( 'Recent posts', 'lptw_recent_posts' ); }
 
         if ( isset( $instance[ 'show_widget_title' ] ) ) { $show_widget_title = (bool) $instance[ 'show_widget_title' ]; }
         else { $show_widget_title = true; }
@@ -267,14 +267,14 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
         // Widget admin form
         ?>
         <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'lptw_recent_posts_domain' ); ?></label>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'lptw_recent_posts' ); ?>:&nbsp;</label>
         <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_widget_title ); ?> id="<?php echo $this->get_field_id( 'show_widget_title' ); ?>" name="<?php echo $this->get_field_name( 'show_widget_title' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_widget_title' ); ?>"><?php _e( 'Display widget title?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_widget_title' ); ?>"><?php _e( 'Display widget title?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('post_type'); ?>"><?php _e( 'Post type:', 'lptw_recent_posts_domain' ); ?></label>
+			<label for="<?php echo $this->get_field_id('post_type'); ?>"><?php _e( 'Post type', 'lptw_recent_posts' ); ?>:&nbsp;</label>
 			<select name="<?php echo $this->get_field_name( 'post_type' ); ?>" id="<?php echo $this->get_field_id('post_type'); ?>" class="widefat registered-post-types">
                 <?php
                     $post_types = get_post_types( '', 'names' );
@@ -318,18 +318,18 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
             <p class="description">If none of the categories is selected - will be displayed posts from all categories.</p>
 
     		<p class="lptw-inner-option"><input class="checkbox" type="checkbox" <?php checked( $same_post_category ); ?> id="<?php echo $this->get_field_id( 'same_post_category' ); ?>" name="<?php echo $this->get_field_name( 'same_post_category' ); ?>" />
-	    	<label for="<?php echo $this->get_field_id( 'same_post_category' ); ?>"><?php _e( 'Use the same category, where is the post. This option override selected categories.', 'lptw_recent_posts_domain' ); ?></label></p>
+	    	<label for="<?php echo $this->get_field_id( 'same_post_category' ); ?>"><?php _e( 'Use the same category, where is the post. This option override selected categories.', 'lptw_recent_posts' ); ?></label></p>
 
         </div>
 
-        <div class="chosen-container"><label for="<?php echo $this->get_field_id( 'authors' ); ?>"><?php _e( 'Select one or more authors:', 'lptw_recent_posts_domain' ); ?></label>
+        <div class="chosen-container"><label for="<?php echo $this->get_field_id( 'authors' ); ?>"><?php _e( 'Select one or more authors', 'lptw_recent_posts' ); ?>:&nbsp;</label>
             <?php
                 $authors_args = array(
                     'who'          => 'authors'
                 );
                 $blog_authors = get_users( $authors_args );
             ?>
-            <select id="<?php echo $this->get_field_id( 'authors' ); ?>" name="<?php echo $this->get_field_name( 'authors' ); ?>[]" multiple class="widefat chosen-select chosen-select-widget" data-placeholder="<?php _e( 'Authors', 'lptw_recent_posts_domain' ); ?>">
+            <select id="<?php echo $this->get_field_id( 'authors' ); ?>" name="<?php echo $this->get_field_name( 'authors' ); ?>[]" multiple class="widefat chosen-select chosen-select-widget" data-placeholder="<?php _e( 'Authors', 'lptw_recent_posts' ); ?>">
             <?php
                 foreach ($blog_authors as $blog_author) {
                     if (is_array($authors) && in_array($blog_author->id, $authors)) { $selected = 'selected="selected"'; }
@@ -343,22 +343,22 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
         </div>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $no_thumbnails ); ?> id="<?php echo $this->get_field_id( 'no_thumbnails' ); ?>" name="<?php echo $this->get_field_name( 'no_thumbnails' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'no_thumbnails' ); ?>"><?php _e( 'Do not display Posts without Featured Image', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'no_thumbnails' ); ?>"><?php _e( 'Do not display Posts without Featured Image', 'lptw_recent_posts' ); ?></label></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $exclude_current_post ); ?> id="<?php echo $this->get_field_id( 'exclude_current_post' ); ?>" name="<?php echo $this->get_field_name( 'exclude_current_post' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'exclude_current_post' ); ?>"><?php _e( 'Exclude the current Post from list', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'exclude_current_post' ); ?>"><?php _e( 'Exclude the current Post from list', 'lptw_recent_posts' ); ?></label></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'lptw_recent_posts_domain' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'lptw_recent_posts' ); ?></label>
 		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $reverse_post_order ); ?> id="<?php echo $this->get_field_id( 'reverse_post_order' ); ?>" name="<?php echo $this->get_field_name( 'reverse_post_order' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'reverse_post_order' ); ?>"><?php _e( 'Reverse post order: display the latest post last in the list?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'reverse_post_order' ); ?>"><?php _e( 'Reverse post order: display the latest post last in the list?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('date_format'); ?>"><?php _e( 'Date format:', 'lptw_recent_posts_domain' ); ?></label>
+			<label for="<?php echo $this->get_field_id('date_format'); ?>"><?php _e( 'Date format:', 'lptw_recent_posts' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'date_format' ); ?>" id="<?php echo $this->get_field_id('date_format'); ?>" class="widefat">
 				<option value="d.m.Y"<?php selected( $date_format, 'd.m.Y' ); ?>><?php echo date('d.m.Y') ?></option>
 				<option value="m/d/Y"<?php selected( $date_format, 'm/d/Y' ); ?>><?php echo date('m/d/Y'); ?></option>
@@ -368,7 +368,7 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
 			</select>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('time_format'); ?>"><?php _e( 'Time format:', 'lptw_recent_posts_domain' ); ?></label>
+			<label for="<?php echo $this->get_field_id('time_format'); ?>"><?php _e( 'Time format:', 'lptw_recent_posts' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'time_format' ); ?>" id="<?php echo $this->get_field_id('time_format'); ?>" class="widefat">
 				<option value="H:i"<?php selected( $time_format, 'H:i' ); ?>><?php echo date('H:i') ?></option>
 				<option value="H:i:s"<?php selected( $time_format, 'H:i:s' ); ?>><?php echo date('H:i:s'); ?></option>
@@ -377,25 +377,25 @@ class lptw_recent_posts_fluid_images_widget extends WP_Widget {
 			</select>
 		</p>
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_time ); ?> id="<?php echo $this->get_field_id( 'show_time' ); ?>" name="<?php echo $this->get_field_name( 'show_time' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_time' ); ?>"><?php _e( 'Display post time?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_time' ); ?>"><?php _e( 'Display post time?', 'lptw_recent_posts' ); ?></label></p>
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_time_before ); ?> id="<?php echo $this->get_field_id( 'show_time_before' ); ?>" name="<?php echo $this->get_field_name( 'show_time_before' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_time_before' ); ?>" title="<?php _e( 'By default post time displays after post date.', 'lptw_recent_posts_domain' );?>"><?php _e( 'Display post time before post date?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_time_before' ); ?>" title="<?php _e( 'By default post time displays after post date.', 'lptw_recent_posts' );?>"><?php _e( 'Display post time before post date?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_post_title ); ?> id="<?php echo $this->get_field_id( 'show_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_post_title' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_post_title' ); ?>"><?php _e( 'Display post title?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_post_title' ); ?>"><?php _e( 'Display post title?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_title_before ); ?> id="<?php echo $this->get_field_id( 'show_title_before' ); ?>" name="<?php echo $this->get_field_name( 'show_title_before' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_title_before' ); ?>"><?php _e( 'Display post title before post date and time?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_title_before' ); ?>"><?php _e( 'Display post title before post date and time?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p><input class="checkbox" type="checkbox" <?php checked( $show_subtitle ); ?> id="<?php echo $this->get_field_id( 'show_subtitle' ); ?>" name="<?php echo $this->get_field_name( 'show_subtitle' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_subtitle' ); ?>"><?php _e( 'Display post subtitle?', 'lptw_recent_posts_domain' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'show_subtitle' ); ?>"><?php _e( 'Display post subtitle?', 'lptw_recent_posts' ); ?></label></p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('color_scheme'); ?>"><?php _e( 'Color scheme:', 'lptw_recent_posts_domain' ); ?></label>
+			<label for="<?php echo $this->get_field_id('color_scheme'); ?>"><?php _e( 'Color scheme:', 'lptw_recent_posts' ); ?></label>
 			<select name="<?php echo $this->get_field_name( 'color_scheme' ); ?>" id="<?php echo $this->get_field_id('color_scheme'); ?>" class="widefat">
-				<option value="no-overlay"<?php selected( $color_scheme, 'no-overlay' ); ?>><?php _e('Without overlay', 'lptw_recent_posts_domain'); ?></option>
-				<option value="light"<?php selected( $color_scheme, 'light' ); ?>><?php _e('Light', 'lptw_recent_posts_domain'); ?></option>
-				<option value="dark"<?php selected( $color_scheme, 'dark' ); ?>><?php _e('Dark', 'lptw_recent_posts_domain'); ?></option>
+				<option value="no-overlay"<?php selected( $color_scheme, 'no-overlay' ); ?>><?php _e('Without overlay', 'lptw_recent_posts'); ?></option>
+				<option value="light"<?php selected( $color_scheme, 'light' ); ?>><?php _e('Light', 'lptw_recent_posts'); ?></option>
+				<option value="dark"<?php selected( $color_scheme, 'dark' ); ?>><?php _e('Dark', 'lptw_recent_posts'); ?></option>
 			</select>
 		</p>
 

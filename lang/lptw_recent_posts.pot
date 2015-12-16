@@ -1,0 +1,561 @@
+# Loco Gettext template
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Recent Posts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: Tue Dec 15 2015 16:36:45 GMT-1000 (TAHT)\n"
+"POT-Revision-Date: Tue Dec 15 2015 16:36:47 GMT-1000 (TAHT)\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#. Name of the plugin
+msgid "Advanced Recent Posts"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://lp-tricks.com"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Plugin that shows the recent posts with thumbnails in the widget and in "
+"other parts of the your blog or theme with shortcodes."
+msgstr ""
+
+#. Author of the plugin
+msgid "Eugene Holin"
+msgstr ""
+
+#: ../lptw-recent-posts.php:57
+msgid "Advanced Recent Posts Options"
+msgstr ""
+
+#: ../lptw-recent-posts.php:75
+msgid "Post Subtitle"
+msgstr ""
+
+#: ../lptw-recent-posts.php:77
+msgid "Featured post"
+msgstr ""
+
+#: ../lptw-recent-posts.php:78
+msgid "Featured post displays larger than the other posts in Responsive Grid Layout"
+msgstr ""
+
+#: ../lptw-recent-posts.php:80
+msgid "Use embedded video (Experimental feature!!! It may not work properly.)"
+msgstr ""
+
+#: ../lptw-recent-posts.php:81
+msgid "Hide Youtube player controls"
+msgstr ""
+
+#: ../lptw-recent-posts.php:82
+msgid ""
+"Use embedded video (first movie) instead of the Post Featured Image in "
+"Responsive Grid Layout. If you have any ideas about this feature or it work "
+"not properly, please write me in special topic on <a href=\"https://wordpress."
+"org/support/topic/new-feature-in-0613-the-embedded-video-instead-of-the-post-"
+"featured-image\" target=\"_blank\">Support Forum</a>"
+msgstr ""
+
+#: ../lptw-recent-posts.php:952
+msgid "No recent posts"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:11
+msgid ""
+"Your site&#8217;s most recent Posts. Displays small thumbnails, post date "
+"and title."
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:12
+msgid "Recent Posts Widget (Thumbnails)"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:48 ../includes/class.widget.
+#: fluid.images.php:48
+msgid "Recent Posts"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:199 ../includes/class.widget.
+#: fluid.images.php:214
+msgid "Recent posts"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:252 ../includes/class.widget.
+#: fluid.images.php:270 ../backend/lptw-recent-posts-backend.php:222
+msgid "Title"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:256 ../includes/class.widget.
+#: fluid.images.php:274
+msgid "Display widget title?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:259 ../includes/class.widget.
+#: fluid.images.php:277 ../backend/lptw-recent-posts-backend.php:135
+msgid "Post type"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:303 ../includes/class.widget.
+#: fluid.images.php:321
+msgid ""
+"Use the same category, where is the post. This option override selected "
+"categories."
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:307 ../includes/class.widget.
+#: fluid.images.php:325
+msgid "Select one or more authors"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:314 ../includes/class.widget.
+#: fluid.images.php:332 ../backend/lptw-recent-posts-backend.php:158
+msgid "Authors"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:328 ../includes/class.widget.
+#: fluid.images.php:346
+msgid "Do not display Posts without Featured Image"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:331 ../includes/class.widget.
+#: fluid.images.php:349
+msgid "Exclude the current Post from list"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:333 ../includes/class.widget.
+#: fluid.images.php:351
+msgid "Number of posts to show:"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:337 ../includes/class.widget.
+#: fluid.images.php:355
+msgid "Reverse post order: display the latest post last in the list?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:340 ../includes/class.widget.
+#: fluid.images.php:358
+msgid "Display post date?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:343 ../includes/class.widget.
+#: fluid.images.php:361
+msgid "Date format:"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:353 ../includes/class.widget.
+#: fluid.images.php:371
+msgid "Time format:"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:362 ../includes/class.widget.
+#: fluid.images.php:380
+msgid "Display post time?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:364 ../includes/class.widget.
+#: fluid.images.php:382
+msgid "By default post time displays after post date."
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:364 ../includes/class.widget.
+#: fluid.images.php:382
+msgid "Display post time before post date?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:367 ../includes/class.widget.
+#: fluid.images.php:385
+msgid "Display post title?"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:370
+msgid "Display post title before post date and time??"
+msgstr ""
+
+#: ../includes/class.widget.small.thumbnails.php:373 ../includes/class.widget.
+#: fluid.images.php:391
+msgid "Display post subtitle?"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:11
+msgid ""
+"Your site&#8217;s most recent Posts. Displays big fluid images, post date "
+"ant title."
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:12
+msgid "Recent Posts Widget (Fluid Images)"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:388
+msgid "Display post title before post date and time?"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:394
+msgid "Color scheme:"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:396 ../backend/lptw-recent-posts-
+#: backend.php:272
+msgid "Without overlay"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:397 ../backend/lptw-recent-posts-
+#: backend.php:273
+msgid "Light"
+msgstr ""
+
+#: ../includes/class.widget.fluid.images.php:398 ../backend/lptw-recent-posts-
+#: backend.php:274
+msgid "Dark"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:67
+msgid "Advanced Recent Posts Shortcode Builder"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:71
+msgid "Layouts"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:76
+msgid "Basic"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:77 ../backend/lptw-recent-posts-
+#: backend.php:81 ../backend/lptw-recent-posts-backend.php:85 ../backend/lptw-
+#: recent-posts-backend.php:89
+msgid "View demo (external link)"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:80 ../backend/lptw-recent-posts-
+#: backend.php:261
+msgid "Thumbnail"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:84
+msgid "Drop Cap"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:88
+msgid "Responsive Grid"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:94
+msgid "Do not display Posts without Featured Image."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:98
+msgid "Columns and dimensions"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:101
+msgid "Adaptive layout "
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:103
+msgid "Number of columns."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:106 ../backend/lptw-recent-posts-
+#: backend.php:126 ../backend/lptw-recent-posts-backend.php:390
+msgid "Save as default"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:108
+msgid "Horizontal."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:110
+msgid "Vertical."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:114
+msgid "The width of the image adapts to the width of the container."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:118
+msgid "The width of the column in pixels, if not already selected adaptive layout."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:122
+msgid ""
+"The fixed height of the Post in pixels, only for Responsive Grid. If value = "
+"0, height of all Featured set to auto height."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:130
+msgid ""
+"The minimal height of all Posts in pixels, only for Responsive Grid. If "
+"value = 0, minimal height is not limited."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:148
+msgid "Post link"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:151
+msgid "This window"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:152
+msgid "New window"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:154
+msgid "Open link in a this or new window."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:176
+msgid "If none of authors is selected - will be displayed posts of all authors."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:180
+msgid "Tags"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:180
+msgid "Now only work with posts."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:193
+msgid ""
+"If none of tags is selected - will be displayed posts with tags and without "
+"tags."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:196
+msgid "Exclude posts with this tags from the posts list."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:201
+msgid "Category"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:208
+msgid ""
+"If none of the categories is selected - will be displayed the posts from all "
+"the categories."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:211
+msgid ""
+"Use the same category, where is the post with a shortcode. This option "
+"override selected categories."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:216
+msgid "Sort & order posts"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:219
+msgid "Sort posts by"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:221
+msgid "None"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:223
+msgid "Name (post slug)"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:224
+msgid "Date created"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:225
+msgid "Date modified"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:226
+msgid "Random"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:227
+msgid "Number of comments"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:230
+msgid "Order"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:232
+msgid "Ascending order from lowest to highest values"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:233
+msgid "Descending order from highest to lowest values"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:238
+msgid "Posts per page."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:240
+msgid "Only for shortcode, not global!"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:243
+msgid "Post offset."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:245
+msgid "Number of post to displace or pass over."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:248
+msgid ""
+"Reverse post order: display the latest post last in the list. By default the "
+"latest post displays first."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:252
+msgid "Exclude current post if the shortcode inserted in the post content."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:258
+msgid "Image size"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:262
+msgid "Medium"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:263
+msgid "Large"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:264
+msgid "Full"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:269
+msgid "Color scheme"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:276
+msgid "Only for Basic layout."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:280
+msgid "Colors"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:283
+msgid "Background color"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:287
+msgid "Text color"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:290
+msgid ""
+"For Basic and Drop Cap layout. Also used in other Layouts if Posts have no "
+"Featured Image."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:293
+msgid "Override colors in CSS."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:298
+msgid "Post Excerpt"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:303
+msgid "Show the Post Excerpt."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:307
+msgid "Post Excerpt lenght in words."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:311
+msgid "Ignore &lt;!-- more --&gt; tag."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:315
+msgid "Display <em>'Read more'</em> link."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:319
+msgid "Display <em>'Read more'</em> link inline with the post excerpt."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:323
+msgid "Display <em>'Read more'</em> link text (use HTML symbols if needed)."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:326
+msgid "Only for Responsive Grid layout yet."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:330
+msgid "Date, time and subtitle settings"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:333
+msgid "Show date and time "
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:336
+msgid "Display <strong>date and time</strong> before post title."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:340
+msgid "Display <strong>date</strong> in recent posts list"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:344
+msgid "Display <strong>time</strong> in recent posts list"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:348
+msgid ""
+"Display time <strong><u>before date</u></strong> in recent posts list. By "
+"default - after date."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:352
+msgid ""
+"Display <strong>subtitle</strong> in recent posts list after the post title "
+"if exist"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:354
+msgid "Only for Basic and Thumbnail layouts."
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:359 ../backend/lptw-recent-posts-
+#: backend.php:362
+msgid "Date Format"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:372 ../backend/lptw-recent-posts-
+#: backend.php:375
+msgid "Time Format"
+msgstr ""
+
+#: ../backend/lptw-recent-posts-backend.php:386
+msgid "Generate Shortcode"
+msgstr ""
